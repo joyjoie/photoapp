@@ -4,20 +4,6 @@ import datetime as dt
 # Create your models here.
 
 
-class Editor(models.Model):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    email = models.EmailField()
-
-    def __str__(self):
-        return self.first_name
-
-    class Meta:
-        ordering = ['first_name']
-
-    def save_editor(self):
-        self.save()
-
 
 class Location(models.Model):
     name = models.CharField(max_length=60)
@@ -35,9 +21,8 @@ class Category(models.Model):
 
 class Image(models.Model):
     name = models.CharField(max_length=60)
-    imager = models.ImageField(upload_to='image /')
+    imager = models.ImageField(upload_to="image/")
     description = models.TextField()
-    editor = models.ForeignKey(Editor)
     category = models.ManyToManyField(Category)
     pub_date = models.DateTimeField(auto_now_add=True)
     location = models.ForeignKey(Location)
@@ -58,6 +43,6 @@ class Image(models.Model):
         return cls.objects.all()
         
     @classmethod
-    def search_by_imager(cls, search_term):
-        yo = cls.objects.filter(name__icontains=search_term)
-        return yo
+    def search_by_category(cls,category):
+        yo = Category.objects.filter(name__icontains = category)[0]
+        return cls.objects.filter(category = yo.id)

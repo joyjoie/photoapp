@@ -13,7 +13,7 @@
 
       <!--Display images  -->
       <div class="col-sm-6 col-md-3">
-        <img src="{{image.imager.url}}" class="img-responsive" alt="Image" style="width: 350px;height:300px; margin-bottom:25px;" >
+        <img src="{{image.imager.url}}" class="img-responsive" alt="Image" style="width: 350px;height:300px; margin: 5px 5px 15px 0px;" >
         
         <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">View Image</button>
         <div id="id01" class="w3-modal">
@@ -25,6 +25,7 @@
               <p class="text-left"> <strong>Created by :{{ image.editor}}</strong> </p>
               <p class="text-left"> Description: {{ image.description }} </p>
               <p class="text-left"> Published on: {{ image.pub_date }} </p>
+              <p class="text-left"> Copy url link: {{ image.pub_date }} </p>
             </div>
           </div>
         </div>
