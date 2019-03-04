@@ -1,5 +1,3 @@
-
-
 {%extends 'photos/base.html'%}
 
 
@@ -8,20 +6,20 @@
 
 <div class="container">
 
-    <!-- Looping through photogallery  -->
-    {% for yep in photogallery %}
+    <!-- Looping through gallery  -->
+    {% for image in images %}
   
     <div class="row">
       <!-- displaying Description -->
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <h2 class="text-center"> {{ yep.post }} </h2>
+      <div class="col-xs-6 col-sm-6 ">
+        <h2 class="text-center"> {{ image.description }} </h2>
       </div>
   
     </div>
-    
+
      <!--Display images  -->
-     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <img src="{{yep.imager.url}}" class="img-responsive" alt="Image">
+     <div class="col-xs-6 col-sm-6 ">
+      <img src="{{image.imager.url}}" class="img-responsive" alt="Image">
     </div>
 
     {% empty %}

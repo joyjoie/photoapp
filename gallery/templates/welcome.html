@@ -1,1 +1,4 @@
 <h1> Welcome to  Gallery app</h1>
+{% for image in images%}
+<img src="{{image.imager.url}}" alt="image">
+{%endfor%}

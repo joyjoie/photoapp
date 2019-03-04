@@ -54,6 +54,5 @@ class Image(models.Model):
         return yo
 
     @classmethod
-    def display_images(cls, display_img):
-        imag = cls.object.filter(imager_icontains=display_img)
-        return imag
+    def display_images(cls):
+        return cls.objects.all()

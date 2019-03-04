@@ -2,17 +2,19 @@ from django.shortcuts import render, redirect
 
 from django.http  import HttpResponse
 
-import datetime as dt
-# from .models import Image,Location, Editor,category
+# import datetime as dt
+from .models import Image,Location, Editor,category
 # Create your views here.
-def welcome(request):
-   return render(request, 'welcome.html')
+
+# def welcome(request):
+#     images = Image.display_images()
+#     return render(request, 'welcome.html',{"images":images})
 
 
 def index(request):
-    date = dt.date.today()   
+    images = Image.display_images() 
   
-    return render(request, 'photos/index.html', {"date": date,})
+    return render(request, 'photos/index.html',{"images":images} )
 
 
 
