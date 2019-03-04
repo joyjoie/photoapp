@@ -59,3 +59,9 @@ def display_img(request):
     else:
         message = "You haven't gotten any photo"
         return render(request, 'photos/image.html',{"message":message})    
+
+
+
+def location(request):
+    print("Loc")
+    return render(request,'photos/location.html')
