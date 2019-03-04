@@ -28,32 +28,32 @@ def image(request, image):
 
 
 
-# def search_results(request):
+def search_results(request):
     
-#     if 'image' in request.GET and request.GET["image"]:
-#         search_term = request.GET.get("image")
-#         searched_images = Image.search_by_imager(search_term)
-#         message = f"{search_term}"
-#         print(searched_images)
+    if 'image' in request.GET and request.GET["image"]:
+        search_term = request.GET.get("image")
+        searched_images = Image.search_by_imager(search_term)
+        message = f"{search_term}"
+        print(searched_images)
 
-#         return render(request, 'photos/search.html',{"message":message,"image": searched_images})
+        return render(request, 'photos/search.html',{"message":message,"image": searched_images})
 
-#     else:
-#         message = "You haven't searched for any photo"
-#         return render(request, 'photos/search.html',{"message":message})    
+    else:
+        message = "You haven't searched for any photo"
+        return render(request, 'photos/search.html',{"message":message})    
 
 
 
-# def display_img(request):
+def display_img(request):
 
-#     if 'image' in request.GET and request.GET["image"]:
-#         search_term = request.GET.get("image")
-#         view_images = Image.image_upload(search_term)
-#         message = f"{search_term}"
-#         print(searched_images)
+    if 'image' in request.GET and request.GET["image"]:
+        search_term = request.GET.get("image")
+        view_images = Image.image_upload(search_term)
+        message = f"{search_term}"
+        print(searched_images)
 
-#         return render(request, 'photos/image.html',{"message":message,"image": view_images})
+        return render(request, 'photos/image.html',{"message":message,"image": view_images})
 
-#     else:
-#         message = "You haven't gotten any photo"
-#         return render(request, 'photos/image.html',{"message":message})    
+    else:
+        message = "You haven't gotten any photo"
+        return render(request, 'photos/image.html',{"message":message})    
