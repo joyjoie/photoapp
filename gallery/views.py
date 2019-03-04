@@ -16,14 +16,14 @@ def index(request):
 
 
 
-# def image(request, image):
+def image(request, image):
     
-#     try:
-#         foto = Image.objects.get(id = image_id)
+    try:
+        foto = Image.objects.get(id = image_id)
 
-#     except DoesNotExist:
-#         raise Http404()
-#     return render(request,"photos/image.html", {"foto":foto})
+    except DoesNotExist:
+        raise Http404()
+    return render(request,"photos/image.html", {"foto":foto})
 
 
 

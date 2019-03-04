@@ -1,4 +1,39 @@
 {%extends 'photos/base.html'%}
+
+
 {% block content %}
 {{block.super}}
+
+<div class="container">
+
+    <!-- Looping through photogallery  -->
+    {% for yep in photogallery %}
+  
+    <div class="row">
+      <!-- displaying Description -->
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h2 class="text-center"> {{ yep.post }} </h2>
+      </div>
+  
+    </div>
+    
+     <!--Display images  -->
+     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <img src="{{yep.imager.url}}" class="img-responsive" alt="Image">
+    </div>
+
+    {% empty %}
+    <div class="row">
+      <h2 class="text-center">There are no images</h2>
+    </div>
+    {% endfor %}
+  
+</div>
+  
+  
+    
+
+
+
+
 {% endblock %}
