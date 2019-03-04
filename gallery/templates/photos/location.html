@@ -1,0 +1,48 @@
+{%extends 'base.html'%} 
+{% block content %}
+<div class="container">
+
+    <div class="row">
+      {% if images %}
+        <h2>Found {{ images|length }} of searched term {{message}}</h2>
+      {% else %}
+        <h2> Found 0 photos for the search term {{message}}</h2>
+      {% endif %}
+  
+    </div>
+
+
+    
+  <div class="row">
+
+    {% if images %}
+    {% for image in images %}
+       <!--Display images  -->
+       <div class="col-sm-6 col-md-3">
+        <img src="{{image.imager.url}}" class="img-responsive" alt="Image" style="width: 350px;height:300px; margin: 5px 5px 15px 0px;" >
+        
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">View Image</button>
+        <div id="id01" class="w3-modal">
+          <div class="w3-modal-content" >
+            <div class="w3-container" style="width: 300px;height:260px">
+              <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+              <p class="text-left"> <strong>{{ image.name}}</strong> </p>
+              <img src="{{image.imager.url}}" class="img-responsive" alt="Image" style="width: 200px;height:100px;  margin: 5px 0px 15px 0px;" >
+              <p class="text-left"> Description: {{ image.description }} </p>
+              <p class="text-left"> Published on: {{ image.location }} </p>
+              <p class="text-left"> Published on: {{ image.pub_date }} </p>
+              <p class="text-left"> Copy url link: {{ image.pub_date }} </p>
+            </div>
+          </div>
+        </div>
+      
+      
+      
+      </div>
+      {% endfor %}
+    {% endif %}
+    </div>
+  </div>
+{% endblock %}
+
+
