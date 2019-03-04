@@ -26,7 +26,7 @@ class Location(models.Model):
         self.save()
 
 
-class category(models.Model):
+class Category(models.Model):
     name = models.CharField(max_length=30)
 
     def __str__(self):
@@ -38,7 +38,7 @@ class Image(models.Model):
     imager = models.ImageField(upload_to='image /')
     description = models.TextField()
     editor = models.ForeignKey(Editor)
-    category = models.ManyToManyField(category)
+    category = models.ManyToManyField(Category)
     pub_date = models.DateTimeField(auto_now_add=True)
     location = models.ForeignKey(Location)
 
@@ -56,3 +56,8 @@ class Image(models.Model):
     @classmethod
     def display_images(cls):
         return cls.objects.all()
+        
+    @classmethod
+    def search_by_imager(cls, search_term):
+        yo = cls.objects.filter(name__icontains=search_term)
+        return yo

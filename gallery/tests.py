@@ -1,7 +1,7 @@
 from django.test import TestCase
 import datetime as dt
 # Create your tests here.
-from .models import Editor,Image,category,Location
+from .models import Editor,Image,Category,Location
 
 
 class EditorTestClass(TestCase):
