@@ -21,3 +21,7 @@ class EditorTestClass(TestCase):
         editors = Editor.objects.all()
         self.assertTrue(len(editors) > 0)
 
+  
+    # def test_delete_method(self):
+    #     editors = Editor.objects.get(first_name='Joy').delete()
+    #     self.joy.delete()
