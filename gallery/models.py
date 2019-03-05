@@ -19,6 +19,10 @@ class Category(models.Model):
         return self.name
 
 
+    def save_category(self):
+        self.save()
+
+
 class Image(models.Model):
     name = models.CharField(max_length=60)
     imager = models.ImageField(upload_to="image/")
@@ -46,3 +50,18 @@ class Image(models.Model):
     def search_by_category(cls,category):
         yo = Category.objects.filter(name__icontains = category)[0]
         return cls.objects.filter(category = yo.id)
+
+
+
+    # @classmethod
+    # def copy_image(image_url):
+    #     find_image = Image.get_image_by_id(imager)
+    #     return pyperclip.copy(find_image.imager)
+
+    # @classmethod
+    # def filter_by_location(cls,location):
+    #    """
+    #    This is the method to get images taken in a certain location
+    #    """
+    #    yo = Location.objects.get(name = location)
+    #    return cls.objects.filter(location_id = yo.id)
