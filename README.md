@@ -20,7 +20,7 @@ You need the following to work on the project: -
 $ git clone https://github.com/joyjoie/photoapp
 ```
 ```bash
-$ cd Blog
+$ cd ip
 ```
 * create a virtual environment
 ```bash
